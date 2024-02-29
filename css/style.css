@@ -7,7 +7,7 @@
     --text-black-900:#302e4d;
     --text-black-700:#504e70;
 }
-body.dark
+body.dark 
 {
     --bg-black-900:#151515;
     --bg-black-100:#222222;
@@ -33,27 +33,26 @@ body
 {
     box-sizing: border-box;
 }
-ul{
+ul
+{
     list-style: none;
 }
-.section {
+.section
+{
     background: var(--bg-black-900);
     min-height: 100vh;
+    display: block;
+    padding: 0 30px;
     opacity: 1;
     position: fixed;
+    left: 270px;
     top: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     z-index: 0;
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.3s ease;
-    width: calc(100% - 270px); /* Adjust width to accommodate aside */
-}
-.sections {
-    flex-grow: 1; /* Allow the sections to take remaining space */
-    padding: 30px;
-    overflow-y: auto; /* Enable scrolling for sections */
 }
 .section.back-section
 {
@@ -98,7 +97,7 @@ ul{
 }
 .section-title
 {
-    float: 0 0 100%;
+    flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
 }
@@ -153,14 +152,13 @@ ul{
 }
 .btn:hover
 {
-   transform: scale(1.05);
+    transform: scale(1.05);
 }
 .shadow-dark
 {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
-
-/*aside*/
+/* aside */
 .aside
 {
     width: 270px;
@@ -171,11 +169,11 @@ ul{
     padding: 30px;
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     z-index: 10;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 .aside .logo
 {
@@ -198,17 +196,6 @@ ul{
     font-family: 'Clicker Script', cursive;
     font-size: 40px;
 }
-.aside .logo a::after
-{
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-top: 5px solid var(--skin-color);
-    border-right: 5px solid var(--skin-color);
-    top: 0;
-    right: 0;
-}
 .aside .logo a::before
 {
     content: '';
@@ -219,6 +206,17 @@ ul{
     border-left: 5px solid var(--skin-color);
     bottom: 0;
     left: 0;
+}
+.aside .logo a::after
+{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
 }
 .aside .nav-toggler
 {
@@ -256,7 +254,7 @@ ul{
     background: var(--skin-color);
     position: absolute;
     top: -6px;
-    left: 0px;
+    left: 0;
 }
 .aside .nav-toggler.open span::before
 {
@@ -271,7 +269,7 @@ ul{
     background: var(--skin-color);
     position: absolute;
     top: 6px;
-    left: 0px;
+    left: 0;
 }
 .aside .nav-toggler.open span::after
 {
@@ -304,7 +302,7 @@ ul{
 {
     margin-right: 15px;
 }
-/*home*/
+/* home */
 .home
 {
     min-height: 100vh;
@@ -323,7 +321,7 @@ h3.hello
 }
 h3.hello span
 {
-    font-family: 'Clicker Script' ,cursive;
+    font-family: 'Clicker Script' , cursive;
     font-size: 30px;
     font-weight: 700;
     color: var(--skin-color);
@@ -358,8 +356,8 @@ h3.my-profession
     width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: 0;
-    bottom: -25px;
+    right: 20px;
+    bottom: -40px;
 }
 .home-img::before
 {
@@ -369,8 +367,8 @@ h3.my-profession
     width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
-    left: 0;
-    top: -25px;
+    left: -20px;
+    top: -40px;
 }
 .home .home-img img
 {
@@ -378,15 +376,15 @@ h3.my-profession
     border-radius: 5px;
     height: 400px;
 }
-/*About*/
+/* About */
 .about .about-content
 {
-    flex:0 0 100%;
+    flex: 0 0 100%;
     max-width: 100%;
 }
 .about .about-content .about-text
 {
-    flex:0 0 100%;
+    flex: 0 0 100%;
     max-width: 100%;
 }
 .about .about-content .about-text h3
@@ -450,7 +448,6 @@ h3.my-profession
 {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 15px;
 }
 .about .about-content .skills .skill-item h5
 {
@@ -467,6 +464,10 @@ h3.my-profession
     border-radius: 4px;
     width: 100%;
     position: relative;
+}
+.about .about-content .skills .skill-item
+{
+    margin-bottom: 25px;
 }
 .about .about-content .skills .skill-item .progress .progress-in
 {
@@ -493,7 +494,7 @@ h3.my-profession
     max-width: 50%;
     margin-top: 30px;
 }
-.about .about-content h3.title
+.about .about-content h3.title 
 {
     font-size: 24px;
     margin-bottom: 30px;
@@ -551,7 +552,7 @@ h3.my-profession
     margin-bottom: 12px;
     color: var(--text-black-700);
 }
-.about .about-content .timeline .timeline-date .fa
+.about .about-content .timeline .timeline-date .fa 
 {
     margin-right: 5px;
 }
@@ -570,7 +571,7 @@ h3.my-profession
     text-align: justify;
     color: var(--text-black-700);
 }
-/*service*/
+/* service */
 .service .container
 {
     padding-bottom: 40px;
@@ -583,28 +584,28 @@ h3.my-profession
 }
 .service .service-item .service-item-inner
 {
-    background-color:var(--bg-black-100);
+    background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
     padding: 30px 15px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.3S ease;
 }
 .service .service-item .service-item-inner:hover
 {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow:  0 0 20px rgba(48, 46, 77, 0.15);
 }
-.service .service-item .service-item-inner .icon
+.service .service-item .service-item-inner .icon 
 {
     height: 60px;
     width: 60px;
     border-radius: 50%;
     display: block;
-    margin: 0 auto 30px;
+    margin:  0 auto 30px;
     text-align: center;
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner .icon .fas
+.service .service-item .service-item-inner .icon .fa
 {
     font-size: 40px;
     line-height: 60px;
@@ -615,7 +616,7 @@ h3.my-profession
 {
     background: var(--skin-color);
 }
-.service .service-item .service-item-inner:hover .icon .fas
+.service .service-item .service-item-inner:hover .icon .fa
 {
     font-size: 25px;
     color: #ffffff;
@@ -634,7 +635,7 @@ h3.my-profession
     color: var(--text-black-700);
     line-height: 25px;
 }
-/*portfolio*/
+/* portfolio */
 .portfolio .container
 {
     padding-bottom: 40px;
@@ -658,7 +659,7 @@ h3.my-profession
 }
 .portfolio .portfolio-item-inner
 {
-    border: 6px solid var(bg --bg-black-100);
+    border: 6px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -668,7 +669,7 @@ h3.my-profession
     width: 100%;
     display: block;
 }
-/*CONTACT*/
+/* contact */
 .contact-title
 {
     color: var(--skin-color);
@@ -694,8 +695,7 @@ h3.my-profession
 {
     display: inline-block;
 }
-.contact .contact-info-item .icon .fa,
-.contact .contact-info-item .icon .fab
+.contact .contact-info-item .icon .fa
 {
     font-size: 25px;
     color: var(--skin-color);
@@ -759,7 +759,6 @@ h3.my-profession
     height: 50px;
     padding: 0 50px;
 }
-/*responsive*/
 @media (max-width:1199px)
 {
     .section .container
@@ -770,7 +769,7 @@ h3.my-profession
     {
         left: -270px;
     }
-    .aside.open
+    .aside.open 
     {
         left: 0;
     }
@@ -779,29 +778,25 @@ h3.my-profession
         display: flex;
         left: 30px;
     }
-    .aside .nav-toggler.open
+    .aside .nav-toggler.open 
     {
         left: 300px;
     }
     .section
     {
-        padding-left: 30px;
-        padding-right: 15px;
         left: 0;
-        width: 100%;
     }
-    .section.open
+    .section.open 
     {
         left: 270px;
-        width: calc(100% - 270px);
     }
-    .about .about-content .personal-info .info-item p span
+    .about .about-content .personal-info .info-item p span 
     {
         display: block;
         margin-left: 0;
     }
 }
-@media (max-width:1024px)
+@media (max-width:991px)
 {
     .contact .contact-info-item,
     .portfolio .portfolio-item,
@@ -810,8 +805,6 @@ h3.my-profession
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .about .about-content .education,
-    .about .about-content .experience,
     .home .home-info
     {
         flex: 0 0 100%;
@@ -822,7 +815,7 @@ h3.my-profession
         display: none;
     }
 }
-@media (max-width:768px)
+@media (max-width:767px)
 {
     .contact .contact-form .col-6,
     .contact .contact-info-item,
