@@ -605,7 +605,7 @@ h3.my-profession
     text-align: center;
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner .icon .fa
+.service .service-item .service-item-inner .icon .fas
 {
     font-size: 40px;
     line-height: 60px;
@@ -616,7 +616,7 @@ h3.my-profession
 {
     background: var(--skin-color);
 }
-.service .service-item .service-item-inner:hover .icon .fa
+.service .service-item .service-item-inner:hover .icon .fas
 {
     font-size: 25px;
     color: #ffffff;
